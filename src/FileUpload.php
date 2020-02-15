@@ -1,4 +1,4 @@
-<?php namespace GeneaLabs\NovaFileUploadField;
+<?php namespace ChrisVasey\NovaFileUploadField;
 
 use CFPropertyList\CFPropertyList;
 use Illuminate\Http\UploadedFile;
@@ -20,16 +20,12 @@ class FileUpload extends File
             ->thumbnail(function () {
                 return "thumb";
                 return $this->value
-                    ? app("filesystem")
-                        ->disk($this->disk)
-                        ->url($this->value)
+                    ? $this->value
                     : null;
             })
             ->preview(function () {
                 return $this->value
-                    ? app("filesystem")
-                        ->disk($this->disk)
-                        ->url($this->value)
+                    ? $this->value
                     : null;
             })
             ->download(function ($request, $model) {
@@ -37,15 +33,11 @@ class FileUpload extends File
                     ? $model->{$this->originalNameColumn}
                     : null;
 
-                return app("filesystem")
-                    ->disk($this->disk)
-                    ->download($this->value, $name);
+                return app("filesystem")->download($this->value, $name);
             })
             ->delete(function () {
                 if ($this->value) {
-                    app("filesystem")
-                        ->disk($this->disk)
-                        ->delete($this->value);
+                    $this->value;
 
                     return $this->columnsThatShouldBeDeleted();
                 }

@@ -23,7 +23,7 @@ The following features set this form field appart from others:
 
 ## Installation
 ```sh
-composer require genealabs/nova-file-upload-field
+composer require chrisvasey/nova-file-upload-field
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ Add it as a field in your Nova resource, for example:
 ```php
 <?php namespace App\Nova;
 
-use GeneaLabs\NovaFileUploadField\FileUpload;
+use ChrisVasey\NovaFileUploadField\FileUpload;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;

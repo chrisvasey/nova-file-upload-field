@@ -1,4 +1,4 @@
-<?php namespace GeneaLabs\NovaFileUploadField\Providers;
+<?php namespace ChrisVasey\NovaFileUploadField\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
