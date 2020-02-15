@@ -1,5 +1,5 @@
 {
-    "name": "genealabs/nova-file-upload-field",
+    "name": "chrisvasey/nova-file-upload-field",
     "description": "A Laravel Nova field.",
     "keywords": [
         "laravel",
